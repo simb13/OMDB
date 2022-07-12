@@ -8,7 +8,8 @@ const OMDB_URL =  "http://www.omdbapi.com/"
 
 router.get('/search', (req, res, next) => {
   const title = req.query.title
-  const url = `${OMDB_URL}?apikey=${OMDB_API_KEY}&s=${title}`
+  const page = req.query.page
+  const url = `${OMDB_URL}?apikey=${OMDB_API_KEY}&s=${title}&page=${page}`
   console.log(url)
 
   axios.get(url)
